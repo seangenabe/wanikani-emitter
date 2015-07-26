@@ -1,6 +1,6 @@
 {
   "name": "wanikani-emitter",
-  "version": "1.0.0-1",
+  "version": "1.0.0",
   "description": "Core functions for wanikani-emitter.",
   "main": "lib/index.js",
   "scripts": {
