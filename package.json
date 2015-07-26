@@ -1,0 +1,36 @@
+{
+  "name": "wanikani-emitter",
+  "version": "1.0.0-1",
+  "description": "Core functions for wanikani-emitter.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel src --stage 1 --out-dir lib --source-maps --optional runtime",
+    "watch": "babel src --stage 1 --out-dir lib --source-maps --optional runtime --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seangenabe/wanikani-emitter.git"
+  },
+  "keywords": [
+    "wanikani",
+    "notification",
+    "notifier",
+    "events",
+    "emitter"
+  ],
+  "author": "Sean Genabe <seangenabe@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seangenabe/wanikani-emitter/issues"
+  },
+  "homepage": "https://github.com/seangenabe/wanikani-emitter#readme",
+  "dependencies": {
+    "babel-runtime": "^5.8.5",
+    "request": "^2.60.0",
+    "delayer": "^1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.5"
+  }
+}
