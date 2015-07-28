@@ -1,6 +1,6 @@
 
 var EventEmitter = require('events').EventEmitter
-var Request = require('request')
+var got = require('got')
 var Delayer = require('delayer')
 
 class WaniKaniEmitter extends EventEmitter {
@@ -46,19 +46,6 @@ class WaniKaniEmitter extends EventEmitter {
     return duration
   }
 
-  // private
-  static requestUri(uri) {
-    return new Promise(function(resolve, reject) {
-      Request(uri, function(error, response, body) {
-        if (error) {
-          reject(error)
-          return
-        }
-        resolve({response, body})
-      })
-    })
-  }
-
   // Checks for pending notifications.
   // Returns a time span representing the suggested next time to check for
   // updates.
@@ -71,7 +58,8 @@ class WaniKaniEmitter extends EventEmitter {
       '/study-queue'
 
     try {
-      var {response, body} = await proto.requestUri(uri)
+      var response = await got(uri)
+      var body = response.body
 
       var data = JSON.parse(body)
       if (data.error) {
@@ -91,7 +79,7 @@ class WaniKaniEmitter extends EventEmitter {
       if (lessons || reviews) {
         if (this.lastNotification.lessons != lessons ||
             this.lastNotification.reviews != reviews) {
-          var lastNotification = {lessons, reviews}
+          var lastNotification = {lessons, reviews, data}
           this.lastNotification = lastNotification
           this.emit('notify', lastNotification)
         }
