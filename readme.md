@@ -1,6 +1,6 @@
 # wanikani-notifier
 
-Core functions for `wanikani-notifier`.
+Core functions for `wanikani-emitter`.
 
 ## Usage
 
@@ -47,6 +47,6 @@ The emitter will continue running whatever error occurs, except for:
 
 * API errors, which are tagged with `err.WaniKaniEmitter_type = 'APIError'`.
 
-## License
+## See also
 
-MIT
+* [WaniKani Notifier UWP](https://github.com/seangenabe/WaniKani-Notifier-UWP) - port for Universal Windows Platform
