@@ -1,7 +1,7 @@
 
-var EventEmitter = require('events').EventEmitter
-var got = require('got')
-var Delayer = require('delayer')
+const EventEmitter = require('events').EventEmitter
+const got = require('got')
+const Delayer = require('delayer')
 
 class WaniKaniEmitter extends EventEmitter {
 
@@ -25,7 +25,7 @@ class WaniKaniEmitter extends EventEmitter {
       while (true) {
         var delay = await this.process()
         this.delayer = new Delayer(delay)
-        await this.delayer.promise
+        await this.delayer
       }
     }
     catch (err) {
