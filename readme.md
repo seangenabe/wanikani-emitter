@@ -1,5 +1,7 @@
 # wanikani-notifier
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/seangenabe/wanikani-emitter.svg)](https://greenkeeper.io/)
+
 Core functions for `wanikani-emitter`.
 
 ## Usage
